@@ -1,0 +1,9 @@
+- name: configure the backend server
+  hosts: backend
+  become: yes
+  vars_prompt:
+    - name: password
+      prompt: enter the passowrd?
+      private: false
+  roles:
+  - backend

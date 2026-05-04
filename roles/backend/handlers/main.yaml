@@ -1,0 +1,8 @@
+- name: deamon reload
+  ansible.builtin.systemd_service:
+    daemon_reload: true
+
+- name: restart the backend server  
+  ansible.builtin.service:
+    name: backend
+    state: restarted
