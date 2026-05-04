@@ -1,0 +1,29 @@
+- name: install the mysql-server
+  ansible.builtin.dnf:
+    name: mysql-server
+    state: latest
+
+- name: enable and start the mysql server
+  ansible.builtin.service:
+    name: mysqld
+    state: started
+    enabled: yes
+
+- name: install the dependencies of python
+  ansible.builtin.pip:
+    name:
+    - pymysql
+    - cryptography
+    executable: pip3.9
+
+- name: check root password set or not
+  community.mysql.mysql_info:
+    login_user: "{{login_user}}"
+    login_password: "{{login_password}}"
+    login_host: "{{login_host}}"
+  register: mysql_info
+  ignore_errors: True
+
+- name: print the information
+  ansible.builtin.debug:
+    msg: "{{mysql_info}}"
