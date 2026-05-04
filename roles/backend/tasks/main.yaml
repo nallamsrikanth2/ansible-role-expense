@@ -33,7 +33,7 @@
   ansible.builtin.command: npm install
   args:
     chdir: /app
-  notify: deamon reload
+  notify: daemon reload
 
 - name: start and enable the backend service
   ansible.builtin.service:
