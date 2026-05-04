@@ -7,6 +7,5 @@ backend.nsrikanth.online
 [frontend]
 nsrikanth.online
 
-[all:vars]
-ansible_password=DevOps321
+
 
