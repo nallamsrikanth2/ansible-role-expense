@@ -1,5 +1,9 @@
 - name: configure the db server
   hosts: db
   become: yes
+  vars_prompt:
+    - name: password
+      propt: enter the your password?
+      private: false
   roles:
   - db
