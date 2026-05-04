@@ -8,5 +8,5 @@ backend.nsrikanth.online
 nsrikanth.online
 
 [all:vars]
-ec2_user_password=DevOps321
+ansible_password=DevOps321
 
