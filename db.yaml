@@ -3,7 +3,7 @@
   become: yes
   vars_prompt:
     - name: password
-      propt: enter the your password?
+      prompt: enter the your password?
       private: false
   roles:
   - db
